@@ -19,7 +19,7 @@ export default function Homepage() {
           <h1 className=" text-white  font-bold  text-center text-4xl">
             Unlimited movies, TV shows, and more
           </h1>
-          <h1 className="text-xl py-3 font-medium text-white">
+          <h1 className="text-xl text-center py-3 font-medium text-white">
             Watch anywhere. Cancel anytime.
           </h1>
           <Button
