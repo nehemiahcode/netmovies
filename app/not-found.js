@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import { useRouter } from "next/navigation";
 
 
-export default () => {
+export default function Notfound() {
   const router = useRouter();
   return (
     <main>

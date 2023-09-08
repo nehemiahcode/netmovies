@@ -28,6 +28,7 @@
     "react-icons": "^4.10.1",
     "react-ripples": "^2.2.1",
     "react-use-downloader": "^1.2.4",
+    "sharp": "^0.32.5",
     "tailwind-scrollbar-hide": "^1.1.7",
     "tailwindcss": "3.3.3",
     "yup": "^1.2.0"
