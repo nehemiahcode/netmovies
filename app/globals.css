@@ -9,6 +9,12 @@ html {
   overflow-x: hidden;
 
 }
+html {
+  -webkit-user-scalable:none;
+  -moz-user-sclalable:none;
+  -ms-user-scalable:none;
+   user-zoom: none;
+}
 
 body {
   background-color: rgba(0, 0, 0, 0.973);
