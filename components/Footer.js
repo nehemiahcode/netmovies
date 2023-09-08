@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@mui/material";
+import {Button} from "@nextui-org/react";
 import Logo from "./Logo";
 import { usePathname } from "next/navigation";
 

@@ -1,6 +1,5 @@
 "use client";
-import { Button } from "@mui/material";
-import Link from "next/link";
+import {Button} from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
@@ -133,6 +132,7 @@ export default function Search() {
             </li>
             {menuItems.map((el, idx) => (
               <Button
+               variant="flat"
                 key={idx}
                 onClick={() => {
                   setSelectedItem({ item: el, idx });
@@ -143,7 +143,7 @@ export default function Search() {
                 aria-selected={selectedItem.idx == idx ? true : false}
                 className={`${
                   selectedItem.idx == idx ? "text-indigo-600 bg-indigo-50" : ""
-                } menu-el-js flex items-center w-full  capitalize justify-between px-3 py-2 cursor-default font-medium text-[1rem] duration-150 text-gray-500 hover:text-indigo-600 hover:bg-indigo-50`}
+                } menu-el-js flex flex-col w-full items-start  capitalize justify-start px-3 py-2 cursor-default font-medium text-[1rem] duration-150 text-gray-500 hover:text-indigo-600 hover:bg-indigo-50`}
               >
                  {el.name}
                 {selectedItem.idx == idx ? (

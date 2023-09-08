@@ -1,13 +1,13 @@
 "use client";
 import Layout from "@/components/layout";
 import { getAllPost } from "@/components/server";
-import { Button } from "@mui/material";
-import Image from "next/image";
+import {Button} from "@nextui-org/react";
 import Link from "next/link";
 import Modal from "@/components/Modal";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Movies from "@/components/movies/Movies";
+import Image from "next/image"
 
 
 export default function Page({ params }) {
@@ -35,6 +35,7 @@ export default function Page({ params }) {
           >
             <div className=" flex items-center justify-center">
               <Image
+                //  as={NextImage}
                 src={p.download}
                 alt="image"
                 className=" h-[400px] w-[90%] md:w-[380px]   "
@@ -46,13 +47,13 @@ export default function Page({ params }) {
               <p className=" text-white text-[1rem]">{p.title}</p>
 
               {disable ? (
-                <Button className=" my-2">no action</Button>
+                <Button variant="flat" className=" text-white py-3 my-2">No action</Button>
               ) : (
                 <Button
                   onClick={handleShow}
                   variant="contained"
                   // disabled={disable}
-                  className=" text-white capitalize my-2 py-2 px-4 bg-red-600 hover:bg-red-700"
+                  className=" text-white capitalize my-4 py-2 px-4 bg-red-600 hover:bg-red-700"
                 >
                   <Link
                     href={p.download}
@@ -62,6 +63,7 @@ export default function Page({ params }) {
                   </Link>
                 </Button>
               )}
+              
               {/* {show ? "" : <p className="  text-white">Links for download</p>} */}
             </div>
           </div>

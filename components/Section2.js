@@ -1,11 +1,9 @@
 "use client";
-import Image from "next/image";
-import Video from "../public/shang-chi.jpg"
 import { PiTelevisionSimple } from "react-icons/pi";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import { Zoom } from "react-awesome-reveal";
-import Link from "next/link";
+
 
 export default function Section2() {
   const [icon, setIcon] = useState(false);
@@ -28,7 +26,6 @@ export default function Section2() {
           Stream unlimited movies and TV shows on your phone, tablet, laptop,
           and TV.
         </p>
-        <Link href={Video} download={'Video.mp4'}>Download</Link>
       </div>
       <div className=" py-7">
         {icon ? (

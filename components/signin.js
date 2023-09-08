@@ -1,25 +1,26 @@
 "use client";
 import Link from "next/link";
 import Logo from "./Logo";
-import Button from "@mui/material/Button";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Button } from "@nextui-org/react";
+import {CgSpinner} from "react-icons/cg"
 
 function Signin() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!name || !email || !password) {
       setError("All fields are required");
       return;
-    }else {
-      setError("")
+    } else {
+      setError("");
     }
 
     try {
@@ -33,6 +34,7 @@ function Signin() {
       if (res.ok) {
         const form = e.target;
         form.reset();
+        setLoading(true);
         router.replace("/home");
       } else {
         console.log("user registration failed");
@@ -69,7 +71,6 @@ function Signin() {
             className="rounded-md bg-transparent selection:bg-transparent text-white outline-none  focus:ring-2 
            focus:border-blue-500 border border-gray-600 px-2 py-2 w-full my-2"
           />
-           
         </label>
         <label htmlFor="email" className=" text-white">
           Email
@@ -79,7 +80,6 @@ function Signin() {
             className="rounded-md focus:ring-2 border-gray-600 selection:bg-transparent text-white outline-none bg-transparent
              focus:border-blue-500 border px-2 py-2 w-full my-2"
           />
-          
         </label>
         <label htmlFor="password" className=" text-white">
           Password
@@ -89,15 +89,21 @@ function Signin() {
             className="rounded-md selection:bg-transparent border-gray-600 text-white focus:ring-2 outline-none bg-transparent 
             focus:border-blue-500 border px-2 py-2 w-full my-3"
           />
-            
         </label>
-        <Button
+        {loading ? (
+             <Button  className="text-white flex items-center gap-4 justify-center">
+              <span className=" animate-spin text-blue-600 text-3xl"><CgSpinner/></span>
+              Sending..
+              </Button>
+        ) : (
+          <Button
           type="submit"
-          variant="contained"
-          className=" bg-green-700 text-[1rem] hover:bg-green-800 py-3 capitalize flex items-center justify-center"
+          className=" bg-green-700 text-[1rem] text-white rounded-md hover:bg-green-800 py-3 capitalize flex items-center justify-center"
         >
           Sign in
         </Button>
+      
+        )}
       </form>
       <div className=" py-5 rounded-md flex  justify-center items-center gap-3 my-3 border-[0.01rem] border-slate-900 w-[92%] sm:w-[70%] md:w-[50%] lg:w-[37%] bg-[rgb(11,15,29)] xl:w-[35%] ">
         <h1 className="font-medium text-sm text-white ">

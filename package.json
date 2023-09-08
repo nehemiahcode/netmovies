@@ -9,15 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^3.2.0",
-    "@mui/material": "^5.14.8",
+    "@nextui-org/react": "^2.1.10",
     "@uidotdev/usehooks": "^2.2.0",
     "autoprefixer": "10.4.14",
     "bcryptjs": "^2.4.3",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.13",
+    "framer-motion": "^10.16.4",
     "mongoose": "^7.5.0",
     "next": "13.4.13",
     "next-themes": "^0.2.1",
@@ -26,11 +25,8 @@
     "react-awesome-reveal": "^4.2.5",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
-    "react-ripples": "^2.2.1",
-    "react-use-downloader": "^1.2.4",
     "sharp": "^0.32.5",
     "tailwind-scrollbar-hide": "^1.1.7",
-    "tailwindcss": "3.3.3",
-    "yup": "^1.2.0"
+    "tailwindcss": "3.3.3"
   }
 }
